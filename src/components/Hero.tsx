@@ -33,45 +33,45 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-t from-[#1a1210] via-transparent to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-b from-[#1a1210]/50 to-transparent" />
 
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 w-full max-w-3xl mx-auto">
+      {/* Content — flex column so every child is reliably centered */}
+      <div className="relative z-10 flex flex-col items-center text-center px-6 w-full max-w-3xl">
 
         {/* Eyebrow: rule — bomb — tagline — bomb — rule */}
-        <div className="hero-eyebrow flex items-center justify-center gap-3 mb-8">
-          <span className="h-px flex-1 max-w-[56px] bg-[oklch(0.52_0.22_25)]" />
+        <div className="hero-eyebrow flex items-center justify-center gap-3 mb-10 w-full">
+          <span className="h-px flex-1 max-w-[64px] bg-[oklch(0.52_0.22_25)]" />
           <BombIcon size={17} className="text-[oklch(0.52_0.22_25)]" />
-          <span className="font-heading text-[11px] font-semibold tracking-[0.3em] uppercase text-[oklch(0.52_0.22_25)]">
+          <span className="font-heading text-[11px] font-semibold tracking-[0.3em] uppercase text-[oklch(0.52_0.22_25)] whitespace-nowrap">
             Houston's Favorite Bar &amp; Grill
           </span>
           <BombIcon size={17} className="text-[oklch(0.52_0.22_25)]" />
-          <span className="h-px flex-1 max-w-[56px] bg-[oklch(0.52_0.22_25)]" />
+          <span className="h-px flex-1 max-w-[64px] bg-[oklch(0.52_0.22_25)]" />
         </div>
 
-        {/* Logo — the hero element */}
+        {/* Logo — centered by flex parent */}
         <img
           src="/images/bs_logo.png"
           alt="Bombshells Restaurant & Bar"
-          className="hero-title mx-auto w-auto drop-shadow-2xl"
-          style={{ height: 'clamp(120px, 18vw, 220px)' }}
+          className="hero-title w-auto drop-shadow-2xl"
+          style={{ height: 'clamp(130px, 18vw, 230px)' }}
           width={400}
           height={186}
         />
 
         {/* Stars + subtitle */}
-        <div className="hero-sub mt-8">
-          <div className="flex items-center justify-center gap-2.5 mb-5">
+        <div className="hero-sub mt-10 flex flex-col items-center">
+          <div className="flex items-center gap-2.5 mb-5">
             {[...Array(5)].map((_, i) => (
               <StarIcon key={i} size={13} className="text-[oklch(0.72_0.14_65)]" />
             ))}
           </div>
-          <p className="font-body text-lg text-[oklch(0.80_0.008_22)] max-w-[460px] mx-auto leading-relaxed">
+          <p className="font-body text-lg text-[oklch(0.80_0.008_22)] max-w-[480px] leading-relaxed">
             Scratch-made food, cold drinks, live entertainment,<br className="hidden sm:block" />
             and good people. Open every day from 11AM to 2AM.
           </p>
         </div>
 
         {/* CTAs */}
-        <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <div className="hero-cta flex flex-col sm:flex-row gap-4 mt-10">
           <a
             href="#menu"
             className="inline-flex items-center justify-center bg-[oklch(0.52_0.22_25)] hover:bg-[oklch(0.58_0.22_25)] text-white font-heading font-semibold tracking-widest uppercase px-8 py-4 text-sm transition-all duration-200 hover:scale-[1.02]"
