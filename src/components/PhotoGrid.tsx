@@ -9,6 +9,21 @@ const InstagramIcon = () => (
   </svg>
 )
 
+const StarIcon = ({ size = 11 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+  </svg>
+)
+
+const BombIcon = ({ size = 14 }: { size?: number }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <circle cx="11" cy="15" r="8" />
+    <path d="M11 7C11 5.5 13 4.5 14.5 3.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+    <circle cx="15.5" cy="2.5" r="1.5" />
+    <circle cx="8" cy="12" r="2" fill="white" fillOpacity="0.18" />
+  </svg>
+)
+
 const PHOTOS = [
   { src: '/images/slider-interior.png',                                              alt: 'Bombshells bar interior',cls: 'aspect-[3/4]' },
   { src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80',   alt: 'Cocktails',              cls: 'aspect-square' },
@@ -29,7 +44,14 @@ export default function PhotoGrid() {
     <section id="gallery" className="py-24 md:py-32 bg-[oklch(0.11_0.01_22)]">
       <div className="max-w-[1280px] mx-auto px-6">
         <div className="grid-animate text-center mb-16">
-          <span className="red-rule mx-auto mb-6" />
+          <span className="red-rule mx-auto mb-5" />
+          <div className="flex items-center justify-center gap-2 mb-5 text-[oklch(0.52_0.22_25)]">
+            <StarIcon />
+            <StarIcon />
+            <BombIcon />
+            <StarIcon />
+            <StarIcon />
+          </div>
           <h2 className="font-display text-3xl-fluid text-[oklch(0.94_0.008_22)] mb-4">
             Join the Revolution
           </h2>

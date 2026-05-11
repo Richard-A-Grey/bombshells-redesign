@@ -1,56 +1,89 @@
 import { ChevronDown } from 'lucide-react'
 
-export default function Hero() {
+const BombIcon = ({ size = 20, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <circle cx="11" cy="15" r="8" />
+    <path d="M11 7C11 5.5 13 4.5 14.5 3.5" stroke="currentColor" strokeWidth="1.8" fill="none" strokeLinecap="round"/>
+    <circle cx="15.5" cy="2.5" r="1.5" />
+    <circle cx="8" cy="12" r="2" fill="white" fillOpacity="0.18" />
+  </svg>
+)
 
+const StarIcon = ({ size = 13, className = '' }: { size?: number; className?: string }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+  </svg>
+)
+
+export default function Hero() {
   return (
-    <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
-      {/* Background image */}
+    <section className="relative h-screen min-h-[700px] flex items-center justify-center overflow-hidden">
+      {/* Food background */}
       <img
-        src="/images/slider-interior.png"
-        alt="Bombshells bar and restaurant interior"
+        src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1920&q=85"
+        alt=""
         className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
-        width={598}
-        height={601}
+        width={1920}
+        height={1280}
       />
 
-      {/* Gradient overlays */}
-      {/* Strong base overlay to kill the baked-in text on the image */}
-      <div className="absolute inset-0 bg-[#1a1210] opacity-60" />
-      {/* Directional gradients for text legibility */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1210] via-[#1a121070] to-transparent" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1210e0] via-[#1a121060] to-transparent" />
+      {/* Overlays */}
+      <div className="absolute inset-0 bg-[#1a1210] opacity-75" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1210] via-transparent to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#1a1210]/50 to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1280px] mx-auto px-6 pb-20 md:pb-28 w-full">
-        <div className="max-w-2xl">
-          <p className="hero-eyebrow font-heading font-semibold text-sm tracking-[0.3em] uppercase text-[oklch(0.52_0.22_25)] mb-4">
+      <div className="relative z-10 text-center px-6 w-full max-w-3xl mx-auto">
+
+        {/* Eyebrow: rule — bomb — tagline — bomb — rule */}
+        <div className="hero-eyebrow flex items-center justify-center gap-3 mb-8">
+          <span className="h-px flex-1 max-w-[56px] bg-[oklch(0.52_0.22_25)]" />
+          <BombIcon size={17} className="text-[oklch(0.52_0.22_25)]" />
+          <span className="font-heading text-[11px] font-semibold tracking-[0.3em] uppercase text-[oklch(0.52_0.22_25)]">
             Houston's Favorite Bar &amp; Grill
-          </p>
+          </span>
+          <BombIcon size={17} className="text-[oklch(0.52_0.22_25)]" />
+          <span className="h-px flex-1 max-w-[56px] bg-[oklch(0.52_0.22_25)]" />
+        </div>
 
-          <h1 className="hero-title font-display text-hero text-[oklch(0.94_0.008_22)] mb-6">
-            Great Times<br />Great Food
-          </h1>
+        {/* Logo — the hero element */}
+        <img
+          src="/images/bs_logo.png"
+          alt="Bombshells Restaurant & Bar"
+          className="hero-title mx-auto w-auto drop-shadow-2xl"
+          style={{ height: 'clamp(120px, 18vw, 220px)' }}
+          width={400}
+          height={186}
+        />
 
-          <p className="hero-sub font-body text-lg text-[oklch(0.80_0.008_22)] mb-10 max-w-[520px]">
-            Scratch-made food, cold drinks, live entertainment, and good people.
-            Open every day from 11AM to 2AM.
-          </p>
-
-          <div className="hero-cta flex flex-col sm:flex-row gap-4">
-            <a
-              href="#menu"
-              className="inline-flex items-center justify-center bg-[oklch(0.52_0.22_25)] hover:bg-[oklch(0.58_0.22_25)] text-white font-heading font-semibold tracking-widest uppercase px-8 py-4 text-sm transition-all duration-200 hover:scale-[1.02]"
-            >
-              See the Menu
-            </a>
-            <a
-              href="#locations"
-              className="inline-flex items-center justify-center border border-[oklch(0.94_0.008_22/0.4)] hover:border-[oklch(0.94_0.008_22)] text-[oklch(0.94_0.008_22)] font-heading font-semibold tracking-widest uppercase px-8 py-4 text-sm transition-all duration-200 hover:bg-[oklch(0.94_0.008_22/0.08)]"
-            >
-              Find a Location
-            </a>
+        {/* Stars + subtitle */}
+        <div className="hero-sub mt-8">
+          <div className="flex items-center justify-center gap-2.5 mb-5">
+            {[...Array(5)].map((_, i) => (
+              <StarIcon key={i} size={13} className="text-[oklch(0.72_0.14_65)]" />
+            ))}
           </div>
+          <p className="font-body text-lg text-[oklch(0.80_0.008_22)] max-w-[460px] mx-auto leading-relaxed">
+            Scratch-made food, cold drinks, live entertainment,<br className="hidden sm:block" />
+            and good people. Open every day from 11AM to 2AM.
+          </p>
+        </div>
+
+        {/* CTAs */}
+        <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center mt-10">
+          <a
+            href="#menu"
+            className="inline-flex items-center justify-center bg-[oklch(0.52_0.22_25)] hover:bg-[oklch(0.58_0.22_25)] text-white font-heading font-semibold tracking-widest uppercase px-8 py-4 text-sm transition-all duration-200 hover:scale-[1.02]"
+          >
+            See the Menu
+          </a>
+          <a
+            href="#locations"
+            className="inline-flex items-center justify-center border border-[oklch(0.94_0.008_22/0.4)] hover:border-[oklch(0.94_0.008_22)] text-[oklch(0.94_0.008_22)] font-heading font-semibold tracking-widest uppercase px-8 py-4 text-sm transition-all duration-200 hover:bg-[oklch(0.94_0.008_22/0.08)]"
+          >
+            Find a Location
+          </a>
         </div>
       </div>
 
