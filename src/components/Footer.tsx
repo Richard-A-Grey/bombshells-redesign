@@ -82,7 +82,7 @@ export default function Footer() {
                   aria-label={label}
                   className="w-10 h-10 flex items-center justify-center border border-[oklch(0.25_0.01_22)] text-[oklch(0.65_0.008_22)] hover:border-[oklch(0.52_0.22_25)] hover:text-[oklch(0.52_0.22_25)] transition-all duration-200"
                 >
-                  <Icon size={18} />
+                  <Icon />
                 </a>
               ))}
             </div>
