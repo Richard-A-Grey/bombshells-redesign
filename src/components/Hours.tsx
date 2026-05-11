@@ -32,7 +32,9 @@ export default function Hours() {
   }, [])
 
   return (
-    <section className="bg-[oklch(0.16_0.012_22)] border-y border-[oklch(0.25_0.01_22)]">
+    <section className="border-y border-[oklch(0.25_0.01_22)]" style={{ backgroundImage: 'url(/images/splash.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Dark overlay over brick texture */}
+      <div className="bg-[oklch(0.11_0.01_22/0.88)]">
       {/* Hours banner */}
       <div className="py-16 md:py-20 text-center border-b border-[oklch(0.25_0.01_22)]">
         <div className="hours-animate flex items-center justify-center gap-3 mb-4">
@@ -72,6 +74,7 @@ export default function Hours() {
             </a>
           </div>
         ))}
+      </div>
       </div>
     </section>
   )

@@ -10,14 +10,14 @@ const InstagramIcon = () => (
 )
 
 const PHOTOS = [
-  { src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80', alt: 'Wings & apps',          cls: 'aspect-[4/5]' },
-  { src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80',   alt: 'Cocktails',             cls: 'aspect-square' },
-  { src: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80',alt: 'Restaurant atmosphere', cls: 'aspect-[3/4]' },
-  { src: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80',alt: 'Burger & fries',         cls: 'aspect-[4/3]' },
-  { src: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&q=80',   alt: 'Bar scene',             cls: 'aspect-[3/4]' },
-  { src: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80',alt: 'Cold beer',             cls: 'aspect-square' },
-  { src: 'https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80',   alt: 'Crowd energy',          cls: 'aspect-[4/5]' },
-  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80',alt: 'Plated food',           cls: 'aspect-square' },
+  { src: '/images/slider-interior.png',                                              alt: 'Bombshells bar interior',cls: 'aspect-[3/4]' },
+  { src: 'https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80',   alt: 'Cocktails',              cls: 'aspect-square' },
+  { src: '/images/slider-burger.jpg',                                                alt: 'Bombshells burger',      cls: 'aspect-[4/3]' },
+  { src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80', alt: 'Wings & apps',           cls: 'aspect-[4/5]' },
+  { src: 'https://images.unsplash.com/photo-1544148103-0773bf10d330?w=600&q=80',    alt: 'Bar scene',              cls: 'aspect-square' },
+  { src: 'https://images.unsplash.com/photo-1608270586620-248524c67de9?w=600&q=80', alt: 'Cold beer',              cls: 'aspect-[3/4]' },
+  { src: 'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80', alt: 'Burger & fries',         cls: 'aspect-[4/5]' },
+  { src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80', alt: 'Plated food',            cls: 'aspect-square' },
 ]
 
 export default function PhotoGrid() {

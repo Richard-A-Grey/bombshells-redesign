@@ -6,17 +6,20 @@ export default function Hero() {
     <section className="relative h-screen min-h-[700px] flex items-end overflow-hidden">
       {/* Background image */}
       <img
-        src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1920&q=85"
-        alt="Bombshells bar atmosphere"
+        src="/images/slider-interior.png"
+        alt="Bombshells bar and restaurant interior"
         className="absolute inset-0 w-full h-full object-cover object-center"
         loading="eager"
-        width={1920}
-        height={1080}
+        width={598}
+        height={601}
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1210] via-[#1a121080] to-[#1a121030]" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1210cc] via-[#1a121060] to-transparent" />
+      {/* Strong base overlay to kill the baked-in text on the image */}
+      <div className="absolute inset-0 bg-[#1a1210] opacity-60" />
+      {/* Directional gradients for text legibility */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1210] via-[#1a121070] to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#1a1210e0] via-[#1a121060] to-transparent" />
 
       {/* Content */}
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 pb-20 md:pb-28 w-full">

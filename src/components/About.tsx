@@ -40,12 +40,12 @@ export default function About() {
         {/* Image */}
         <div className="about-animate relative">
           <img
-            src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&q=85"
-            alt="Bombshells signature burger"
-            className="w-full aspect-[4/5] object-cover"
+            src="/images/bombshells-babe.png"
+            alt="Bombshells server in uniform"
+            className="w-full aspect-[4/9] object-cover object-top"
             loading="lazy"
-            width={900}
-            height={1125}
+            width={409}
+            height={930}
           />
           {/* Accent overlay */}
           <div className="absolute -bottom-4 -left-4 w-32 h-32 border-2 border-[oklch(0.52_0.22_25)] -z-10" />
