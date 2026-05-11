@@ -39,9 +39,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-12 md:gap-8 mb-16">
           {/* Brand */}
           <div>
-            <p className="font-display text-4xl text-[oklch(0.94_0.008_22)] mb-4">
-              BOMBSHELLS
-            </p>
+            <img
+              src="/images/bs_logo.png"
+              alt="Bombshells Restaurant & Bar"
+              className="h-20 w-auto mb-4"
+              width={200}
+              height={93}
+            />
             <p className="font-body text-[oklch(0.65_0.008_22)] leading-relaxed text-sm max-w-[240px]">
               Great times, great food. Open every day from 11AM to 2AM across
               Houston and surrounding areas.

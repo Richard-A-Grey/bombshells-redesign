@@ -56,9 +56,15 @@ export default function Navbar() {
         {/* Logo — center */}
         <a
           href="/"
-          className="font-display text-3xl tracking-wide text-[oklch(0.94_0.008_22)] hover:text-[oklch(0.52_0.22_25)] transition-colors absolute left-1/2 -translate-x-1/2"
+          className="absolute left-1/2 -translate-x-1/2 hover:opacity-90 transition-opacity"
         >
-          BOMBSHELLS
+          <img
+            src="/images/bs_logo.png"
+            alt="Bombshells Restaurant & Bar"
+            className="h-12 w-auto"
+            width={200}
+            height={93}
+          />
         </a>
 
         {/* Desktop nav right */}
