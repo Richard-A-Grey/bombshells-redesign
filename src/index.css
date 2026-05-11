@@ -35,11 +35,9 @@
   --pwa-safe-top: env(safe-area-inset-top, 0);
 }
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Tailwind v4 preflight handles box-sizing + margin/padding reset.
+   Adding our own * rule outside @layer would override utilities like
+   mx-auto since unlayered CSS beats layered utilities in v4. */
 
 html { scroll-behavior: smooth; }
 
