@@ -13,6 +13,7 @@
 
   --font-display: "Bebas Neue", sans-serif;
   --font-heading: "Oswald", sans-serif;
+  --font-stencil: "Stardos Stencil", "Oswald", sans-serif;
   --font-body: "DM Sans", sans-serif;
 }
 
@@ -44,6 +45,7 @@ body {
 
 .font-display { font-family: "Bebas Neue", sans-serif; }
 .font-heading { font-family: "Oswald", sans-serif; }
+.font-stencil { font-family: "Stardos Stencil", "Oswald", sans-serif; letter-spacing: 0.04em; }
 
 .text-hero {
   font-size: clamp(4rem, 10vw, 8rem);
@@ -80,17 +82,32 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes drawRule {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+
 .hero-eyebrow {
   animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
+.hero-eyebrow > span:first-child,
+.hero-eyebrow > span:last-child {
+  transform-origin: center;
+  animation: drawRule 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both;
+}
 .hero-title {
-  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+  animation: scaleIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 .hero-sub {
-  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
 }
 .hero-cta {
-  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.95s both;
 }
 
 /* Section scroll reveals — visible by default, GSAP enhances */

@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Hours from './components/Hours'
+import Hashtag from './components/Hashtag'
 import PhotoGrid from './components/PhotoGrid'
 import Footer from './components/Footer'
 
@@ -19,6 +20,7 @@ export default function App() {
         <Hero />
         <About />
         <Hours />
+        <Hashtag />
         <PhotoGrid />
       </main>
       <Footer />

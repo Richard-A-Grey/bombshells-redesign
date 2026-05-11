@@ -52,7 +52,7 @@ export default function PhotoGrid() {
             <StarIcon />
             <StarIcon />
           </div>
-          <h2 className="font-display text-3xl-fluid text-[oklch(0.94_0.008_22)] mb-4">
+          <h2 className="font-stencil text-3xl-fluid font-bold text-[oklch(0.94_0.008_22)] mb-4 tracking-wide">
             Join the Revolution
           </h2>
           <a

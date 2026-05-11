@@ -40,7 +40,7 @@ export default function Hero() {
         <div className="hero-eyebrow flex items-center justify-center gap-3 mb-10 w-full">
           <span className="h-px flex-1 max-w-[64px] bg-[oklch(0.52_0.22_25)]" />
           <BombIcon size={17} className="text-[oklch(0.52_0.22_25)]" />
-          <span className="font-heading text-[11px] font-semibold tracking-[0.3em] uppercase text-[oklch(0.52_0.22_25)] whitespace-nowrap">
+          <span className="font-stencil text-xs font-bold tracking-[0.32em] uppercase text-[oklch(0.52_0.22_25)] whitespace-nowrap">
             Houston's Favorite Bar &amp; Grill
           </span>
           <BombIcon size={17} className="text-[oklch(0.52_0.22_25)]" />

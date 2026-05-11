@@ -39,7 +39,7 @@ export default function Hours() {
       <div className="py-16 md:py-20 text-center border-b border-[oklch(0.25_0.01_22)]">
         <div className="hours-animate flex items-center justify-center gap-3 mb-4">
           <Clock size={20} className="text-[oklch(0.72_0.14_65)]" />
-          <span className="font-heading text-sm font-semibold tracking-[0.3em] uppercase text-[oklch(0.72_0.14_65)]">
+          <span className="font-stencil text-sm font-bold tracking-[0.32em] uppercase text-[oklch(0.72_0.14_65)]">
             Open Every Day
           </span>
         </div>
