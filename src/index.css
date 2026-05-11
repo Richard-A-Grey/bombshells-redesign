@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: oklch(0.11 0.01 22);
+  --color-surface: oklch(0.16 0.012 22);
+  --color-surface-raised: oklch(0.20 0.014 22);
+  --color-accent: oklch(0.52 0.22 25);
+  --color-accent-hover: oklch(0.58 0.22 25);
+  --color-amber: oklch(0.72 0.14 65);
+  --color-text-primary: oklch(0.94 0.008 22);
+  --color-text-secondary: oklch(0.65 0.008 22);
+  --color-border: oklch(0.25 0.01 22);
+
+  --font-display: "Bebas Neue", sans-serif;
+  --font-heading: "Oswald", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: oklch(0.11 0.01 22);
+  color: oklch(0.94 0.008 22);
+  font-family: "DM Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: oklch(0.11 0.01 22); }
+::-webkit-scrollbar-thumb { background: oklch(0.35 0.01 22); border-radius: 3px; }
+
+::selection {
+  background: oklch(0.52 0.22 25 / 0.35);
+  color: oklch(0.94 0.008 22);
+}
+
+.font-display { font-family: "Bebas Neue", sans-serif; }
+.font-heading { font-family: "Oswald", sans-serif; }
+
+.text-hero {
+  font-size: clamp(4rem, 10vw, 8rem);
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.text-3xl-fluid {
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+.text-2xl-fluid {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+}
+
+.text-xl-fluid {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  line-height: 1.2;
+}
+
+.red-rule {
+  display: block;
+  width: 64px;
+  height: 3px;
+  background: oklch(0.52 0.22 25);
+}
+
+/* Hero entrance — CSS so it runs in any environment including headless */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+.hero-title {
+  animation: fadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
+}
+.hero-sub {
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+}
+.hero-cta {
+  animation: fadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
+}
+
+/* Section scroll reveals — visible by default, GSAP enhances */
+.about-animate, .hours-animate, .grid-animate {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
