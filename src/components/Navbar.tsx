@@ -29,46 +29,44 @@ export default function Navbar() {
           : 'bg-gradient-to-b from-[oklch(0_0_0/0.7)] to-transparent',
       )}
     >
-      <nav className="max-w-[1280px] mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Mobile: hamburger */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden text-[oklch(0.94_0.008_22)] hover:text-[oklch(0.52_0.22_25)] transition-colors"
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={24} /> : <Menu size={24} />}
-        </button>
+      <nav className="max-w-[1280px] mx-auto px-6 h-16 flex items-center gap-4">
+        {/* Left: hamburger (mobile) + first 3 links (desktop) */}
+        <div className="flex-1 flex items-center justify-start gap-8">
+          <button
+            onClick={() => setOpen(!open)}
+            className="md:hidden text-[oklch(0.94_0.008_22)] hover:text-[oklch(0.52_0.22_25)] transition-colors"
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={24} /> : <Menu size={24} />}
+          </button>
 
-        {/* Desktop nav left */}
-        <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.slice(0, 3).map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="font-heading text-sm font-semibold tracking-widest uppercase text-[oklch(0.94_0.008_22)] hover:text-[oklch(0.52_0.22_25)] transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+          <ul className="hidden md:flex items-center gap-8">
+            {NAV_LINKS.slice(0, 3).map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className="font-heading text-sm font-semibold tracking-widest uppercase text-[oklch(0.94_0.008_22)] hover:text-[oklch(0.52_0.22_25)] transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        {/* Logo — center */}
-        <a
-          href="/"
-          className="absolute left-1/2 -translate-x-1/2 hover:opacity-90 transition-opacity"
-        >
+        {/* Logo — natural flex item, centered between equal flex-1 sides */}
+        <a href="/" className="flex-shrink-0 hover:opacity-90 transition-opacity">
           <img
             src="/images/bs_logo.png"
             alt="Bombshells Restaurant & Bar"
-            className="h-12 w-auto"
+            className="h-12 w-auto block"
             width={200}
             height={93}
           />
         </a>
 
-        {/* Desktop nav right */}
-        <div className="flex items-center gap-8">
+        {/* Right: last 2 links (desktop) + order CTA */}
+        <div className="flex-1 flex items-center justify-end gap-8">
           <ul className="hidden md:flex items-center gap-8">
             {NAV_LINKS.slice(3).map((link) => (
               <li key={link.label}>
