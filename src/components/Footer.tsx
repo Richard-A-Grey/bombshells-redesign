@@ -35,6 +35,41 @@ const SOCIAL = [
 export default function Footer() {
   return (
     <footer className="bg-[oklch(0.08_0.008_22)] border-t border-[oklch(0.25_0.01_22)]">
+      {/* Newsletter band */}
+      <div className="border-b border-[oklch(0.25_0.01_22)]">
+        <div className="max-w-[1280px] mx-auto px-6 py-12 md:py-14 grid md:grid-cols-[1fr_auto] gap-8 md:gap-12 items-center">
+          <div>
+            <p className="font-stencil text-xs font-bold tracking-[0.32em] uppercase text-[oklch(0.52_0.22_25)] mb-2">
+              Stay In The Loop
+            </p>
+            <h3 className="font-display text-2xl-fluid text-[oklch(0.94_0.008_22)] leading-[0.95] mb-2">
+              First Dibs On Specials
+            </h3>
+            <p className="font-body text-sm text-[oklch(0.65_0.008_22)] max-w-[480px]">
+              Event drops, new menu items, locations opening. One email a month, never spam.
+            </p>
+          </div>
+          <form
+            onSubmit={(e) => e.preventDefault()}
+            className="flex flex-col sm:flex-row gap-3 min-w-[280px] md:min-w-[400px]"
+          >
+            <input
+              type="email"
+              required
+              placeholder="your@email.com"
+              aria-label="Email address"
+              className="flex-1 bg-[oklch(0.11_0.01_22)] border border-[oklch(0.25_0.01_22)] focus:border-[oklch(0.52_0.22_25)] outline-none text-[oklch(0.94_0.008_22)] placeholder:text-[oklch(0.45_0.008_22)] font-body text-sm px-4 py-3.5 transition-colors"
+            />
+            <button
+              type="submit"
+              className="bg-[oklch(0.52_0.22_25)] hover:bg-[oklch(0.58_0.22_25)] text-white font-stencil font-bold text-xs tracking-[0.28em] uppercase px-6 py-3.5 transition-colors duration-200"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
       <div className="max-w-[1280px] mx-auto px-6 py-16 md:py-20">
         <div className="grid md:grid-cols-3 gap-12 md:gap-8 mb-16">
           {/* Brand */}
