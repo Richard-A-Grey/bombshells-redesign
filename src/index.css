@@ -17,6 +17,24 @@
   --font-body: "DM Sans", sans-serif;
 }
 
+/* CSS variables in :root for use outside Tailwind utilities (inline styles, raw CSS) */
+:root {
+  --color-bg: oklch(0.11 0.01 22);
+  --color-bg-deep: oklch(0.09 0.01 22);
+  --color-surface: oklch(0.16 0.012 22);
+  --color-surface-raised: oklch(0.20 0.014 22);
+  --color-accent: oklch(0.52 0.22 25);
+  --color-accent-hover: oklch(0.58 0.22 25);
+  --color-amber: oklch(0.72 0.14 65);
+  --color-text: oklch(0.94 0.008 22);
+  --color-text-soft: oklch(0.75 0.008 22);
+  --color-text-muted: oklch(0.65 0.008 22);
+  --color-border: oklch(0.25 0.01 22);
+  --color-border-strong: oklch(0.35 0.01 22);
+
+  --pwa-safe-top: env(safe-area-inset-top, 0);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -121,4 +139,39 @@ body {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Loading screen — runs once on mount, then fades out at 2.6s. */
+@keyframes loadingFadeOut {
+  0%, 86% { opacity: 1; pointer-events: auto; }
+  100%    { opacity: 0; pointer-events: none; visibility: hidden; }
+}
+@keyframes loadingLogoIn {
+  0%   { opacity: 0; transform: scale(0.88); }
+  40%  { opacity: 1; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes loadingProgressFill {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+@keyframes loadingFadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.loading-fade-out {
+  animation: loadingFadeOut 3s ease-in-out forwards;
+}
+.loading-logo {
+  animation: loadingLogoIn 1.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.loading-eyebrow {
+  animation: loadingFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
+}
+.loading-stars {
+  animation: loadingFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both;
+}
+.loading-progress {
+  animation: loadingProgressFill 2.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
 }
